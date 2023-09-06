@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Conexión a API Placeholder
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,23 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Conexión a JsonPlaceholder</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Conexión a PlaceHolder</strong>
+    <div>
+      <ion-button (click)="obtener()" color="primary" shape="round">
+        Conexión a Prueba
+      </ion-button>
+    </div>
   </div>
+
+  <div id="container2">
+    <ion-item *ngFor="let listaCompleta of listado">
+      <h2>{{listaCompleta.title}}</h2>
+    </ion-item>
+  </div>
+  
 </ion-content>

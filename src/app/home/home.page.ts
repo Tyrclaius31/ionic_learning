@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MiApiService } from '../services/mi-api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private serviciolistado: MiApiService){}
+    listado: any=[];
+
+  obtener(){
+    this.serviciolistado.obtener().subscribe(
+      (data) =>{
+      console.log(data);
+      this.listado = data;
+      }
+    )
+  }
 
 }
